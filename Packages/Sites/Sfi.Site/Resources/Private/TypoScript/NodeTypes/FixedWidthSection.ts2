@@ -1,5 +1,5 @@
 prototype(Sfi.Site:FixedWidthSection) < prototype(TYPO3.TypoScript:Tag) {
-	attributes.class = 'FixedWidth'
+	attributes.class = ${'FixedWidth FixedWidth--' + q(node).property('variant')}
 	content = TYPO3.Neos:ContentCollection
 
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping

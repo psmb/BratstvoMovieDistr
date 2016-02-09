@@ -1,5 +1,5 @@
 prototype(Sfi.Site:Carousel) < prototype(TYPO3.TypoScript:Tag) {
-	attributes.class = 'Carousel'
+	attributes.class = ${'Carousel Carousel--' + q(node).property('variant')}
 	content = TYPO3.Neos:ContentCollectionRenderer
 
 	prototype(TYPO3.Neos.NodeTypes:Image) {
