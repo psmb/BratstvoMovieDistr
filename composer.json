@@ -1,6 +1,6 @@
 {
-    "name": "typo3/boilerplate-distribution",
-    "description" : "Boilerplate Distribution",
+    "name": "typo3/bratstvomovie-distr",
+    "description" : "bratstvo-movie.ru Neos Distribution",
     "license": "GPL-3.0+",
     "config": {
         "vendor-dir": "Packages/Libraries",
