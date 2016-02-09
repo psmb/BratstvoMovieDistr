@@ -1,0 +1,19 @@
+prototype(Sfi.Site:Carousel) < prototype(TYPO3.TypoScript:Tag) {
+	attributes.class = 'Carousel'
+	content = TYPO3.Neos:ContentCollectionRenderer
+
+	prototype(TYPO3.Neos.NodeTypes:Image) {
+		attributes.class = 'Carousel-Item'
+		maximumWidth = 980
+	}
+
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.wrap = ${'<div>' + value + '</div>'}
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
+}

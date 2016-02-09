@@ -1,0 +1,13 @@
+prototype(Sfi.Site:ImageQuote) {
+	image = TYPO3.Neos.NodeTypes:Image {
+		@context.node = ${q(node).children('image').get(0)}
+	}
+
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
+}

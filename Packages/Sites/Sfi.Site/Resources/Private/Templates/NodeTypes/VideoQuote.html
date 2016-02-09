@@ -1,0 +1,7 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<div class="VideoQuote">
+    <div class="VideoQuote-video">{video -> f:format.raw()}</div>
+    <div class="VideoQuote-quote">{neos:contentElement.editable(property: 'quote')}</div>
+    <div class="VideoQuote-caption">{neos:contentElement.editable(property: 'caption')}</div>
+</div>

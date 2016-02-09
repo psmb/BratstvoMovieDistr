@@ -3,6 +3,73 @@
 
 'Sfi.Site:Page':
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Page'
+    'TYPO3.Neos.NodeTypes:Page': TRUE
   ui:
     label: 'Обычная страница'
+
+
+'Sfi.Site:FixedWidthSection':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:ContentCollection': TRUE
+  ui:
+    label: 'Секция ограниченной ширины'
+
+'Sfi.Site:Carousel':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:ContentCollection': TRUE
+  ui:
+    label: 'Карусель'
+
+'Sfi.Site:Mosaic':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:ContentCollection': TRUE
+  ui:
+    label: 'Мозайка'
+
+
+'Sfi.Site:VideoQuote':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Видео-цитата'
+  childNodes:
+    video:
+      type: 'Sfi.YouTube:YouTube'
+  properties:
+    quote:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Текст цитаты'
+    caption:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Подпись'
+
+'Sfi.Site:ImageQuote':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Фото-цитата'
+  childNodes:
+    image:
+      type: 'TYPO3.Neos.NodeTypes:Image'
+  properties:
+    quote:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Текст цитаты'
+    caption:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Подпись'

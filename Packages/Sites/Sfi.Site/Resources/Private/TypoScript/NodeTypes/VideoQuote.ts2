@@ -1,0 +1,12 @@
+prototype(Sfi.Site:VideoQuote) {
+	video = Sfi.YouTube:YouTube {
+		@context.node = ${q(node).children('video').get(0)}
+	}
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
+}
