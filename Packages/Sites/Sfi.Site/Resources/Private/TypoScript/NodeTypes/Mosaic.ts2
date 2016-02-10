@@ -1,10 +1,14 @@
 prototype(Sfi.Site:Mosaic) < prototype(TYPO3.TypoScript:Tag) {
-	attributes.class = 'Mosaic'
+	attributes.class = 'Mosaic row small-up-2 medium-up-4'
 	content = TYPO3.Neos:ContentCollectionRenderer
 
 	prototype(TYPO3.Neos.NodeTypes:Image) {
-		attributes.class = 'Mosaic-Item'
-		maximumWidth = 320
+		attributes.class = 'Mosaic-item column'
+		width = 480
+		height = 480
+		maximumWidth = 480
+		maxiumumHeight = 480
+		allowCropping = true
 	}
 
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping

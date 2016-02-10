@@ -1,0 +1,13 @@
+prototype(TYPO3.Neos.NodeTypes:Image) {
+    templatePath = 'resource://Sfi.Site/Private/Templates/NodeTypes/Image.html'
+    maximumWidth = 1920
+}
+prototype(TYPO3.Neos.NodeTypes:Text) {
+    attributes.class = 'Text'
+}
+prototype(TYPO3.Neos.NodeTypes:Headline) {
+    attributes.class = 'Heading'
+}
+prototype(Sfi.YouTube:YouTube) {
+    attributes.class = 'flex-video widescreen'
+}

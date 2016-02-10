@@ -1,0 +1,8 @@
+@import "../node_modules/foundation-sites/scss/foundation";
+@import "reset";
+@import "Global/**/*.scss";
+@import "Modules/**/*.scss";
+
+@include foundation-flex-grid;
+@include foundation-flex-video;
+@include foundation-visibility-classes;

@@ -1,0 +1,31 @@
+.Mosaic {
+    max-width: inherit !important;
+}
+.Mosaic-item {
+    position: relative;
+    padding: 0 !important;
+}
+.Mosaic-item figcaption {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.8;
+    padding-top: $u;
+    text-align: center;
+    color: white;
+}
+.Mosaic-item:nth-child(3n) figcaption {
+    background-color: $red;
+}
+.Mosaic-item:nth-child(3n+1) figcaption {
+    background-color: $green;
+}
+.Mosaic-item:nth-child(3n+2) figcaption {
+    background-color: $blue;
+}
+.Mosaic-item:hover figcaption {
+    display: block;
+}

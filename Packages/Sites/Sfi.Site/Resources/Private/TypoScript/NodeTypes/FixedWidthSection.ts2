@@ -1,7 +1,7 @@
 prototype(Sfi.Site:FixedWidthSection) < prototype(TYPO3.TypoScript:Tag) {
-	attributes.class = ${'FixedWidth FixedWidth--' + q(node).property('variant')}
+	attributes.class = ${q(node).property('variant') == 'wide' ? 'columns' : 'medium-10 medium-offset-1 large-8 large-offset-2 columns'}
 	content = TYPO3.Neos:ContentCollection
 
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
-	@process.wrap = ${'<div>' + value + '</div>'}
+	@process.wrap = ${'<div class="row">' + value + '</div>'}
 }

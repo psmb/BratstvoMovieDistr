@@ -1,6 +1,7 @@
 prototype(Sfi.Site:ImageQuote) {
 	image = TYPO3.Neos.NodeTypes:Image {
 		@context.node = ${q(node).children('image').get(0)}
+		maximumWidth = 570
 	}
 
 	@cache {
