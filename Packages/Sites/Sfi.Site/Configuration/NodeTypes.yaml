@@ -63,7 +63,7 @@
 
 
 'Sfi.Site:VideoQuote':
-  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('caption') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
+  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('speaker') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   superTypes:
     'TYPO3.Neos:Content': TRUE
   ui:
@@ -78,15 +78,21 @@
         inlineEditable: TRUE
         aloha:
           placeholder: 'Текст цитаты'
-    caption:
+    speaker:
       type: string
       ui:
         inlineEditable: TRUE
         aloha:
-          placeholder: 'Подпись'
+          placeholder: 'Автор цитатц'
+    speakerInfo:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Информация об авторе'
 
 'Sfi.Site:ImageQuote':
-  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('caption') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
+  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('speaker') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   superTypes:
     'TYPO3.Neos:Content': TRUE
   ui:
@@ -101,9 +107,15 @@
         inlineEditable: TRUE
         aloha:
           placeholder: 'Текст цитаты'
-    caption:
+    speaker:
       type: string
       ui:
         inlineEditable: TRUE
         aloha:
-          placeholder: 'Подпись'
+          placeholder: 'Автор цитатц'
+    speakerInfo:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Информация об авторе'
