@@ -3,10 +3,10 @@
 <div data-sr class="paddingVertical-triple">
     <div class="Quote paddingBottom-triple">{neos:contentElement.editable(property: 'quote')}</div>
     <div class="row">
-        <div class="medium-6 columns" data-sr='enter left and then move 100px'>
+        <div class="small-12 medium-6 columns marginBottom-single" data-sr='enter left and then move 100px'>
             <div class="Heading--small marginBottom-half">{neos:contentElement.editable(property: 'speaker')}</div>
             <div class="Text--small">{neos:contentElement.editable(property: 'speakerInfo')}</div>
         </div>
-        <div class="medium-6 columns" data-sr='enter right and then move 100px'>{image -> f:format.raw()}</div>
+        <div class="small-12 medium-6 columns" data-sr='enter right and then move 100px'>{image -> f:format.raw()}</div>
     </div>
 </div>

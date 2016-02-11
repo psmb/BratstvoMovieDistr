@@ -1,9 +1,9 @@
 prototype(Sfi.Site:Mosaic) < prototype(TYPO3.TypoScript:Tag) {
-	attributes.class = 'Mosaic row small-up-2 medium-up-4'
+	attributes.class = 'Mosaic row collapse'
 	content = TYPO3.Neos:ContentCollectionRenderer
 
 	prototype(TYPO3.Neos.NodeTypes:Image) {
-		attributes.class = 'Mosaic-item column'
+		attributes.class = 'Mosaic-item small-6 medium-3 large-3 column'
 		width = 480
 		height = 480
 		maximumWidth = 480

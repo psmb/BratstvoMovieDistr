@@ -3,7 +3,7 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
     maximumWidth = 1920
 }
 prototype(TYPO3.Neos.NodeTypes:Text) {
-    attributes.class = 'Text'
+    attributes.class = 'Text marginVertical-double'
 }
 prototype(TYPO3.Neos.NodeTypes:Headline) {
     attributes.class = 'Heading'
