@@ -4,4 +4,5 @@ $(function () {
     loop: true,
 		nav: false
 	});
+	window.sr = new scrollReveal();
 });

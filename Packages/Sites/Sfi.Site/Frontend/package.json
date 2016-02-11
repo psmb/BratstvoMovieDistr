@@ -21,6 +21,6 @@
   "dependencies": {
     "jquery": "^2.2.0",
     "owl-carousel-2": "0.0.3",
-    "scrollreveal": "^3.0.9"
+    "scrollreveal": "^2.3.3"
   }
 }

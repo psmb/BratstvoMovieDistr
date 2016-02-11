@@ -10,8 +10,9 @@ var cssnano = require('gulp-cssnano');
 
 // Input configuration
 var inputVendorJs = [
+	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/owl-carousel-2/owl.carousel.min.js',
-	'./node_modules/scrollreveal/dist/scrollreveal.min.js'
+	'./node_modules/scrollreveal/dist/scrollReveal.min.js'
 ];
 var inputVendorCss = [
 	'./node_modules/owl-carousel-2/assets/owl.carousel.min.css',
