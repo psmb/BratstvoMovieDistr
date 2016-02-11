@@ -1,7 +1,12 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <header class="Header">
-	<div>{f:translate(package:'Sfi.Site', id:'svg.psmbPresents', value: 'Преображенское братство представляет')}</div>
-	<div>{f:translate(package:'Sfi.Site', id:'svg.movieBy', value: 'Фильм Александра Гутмана')}</div>
-	<h1>{f:translate(package:'Sfi.Site', id:'svg.brotherhood', value: 'Братство')}</h1>
-	{mainMenu -> f:format.raw()}
+	<div class="show-for-small-only">
+		<f:render partial="CoverSmall"/>
+	</div>
+	<div class="show-for-medium-only">
+		<f:render partial="CoverMedium"/>
+	</div>
+	<div class="show-for-large">
+		<f:render partial="CoverLarge"/>
+	</div>
 </header>

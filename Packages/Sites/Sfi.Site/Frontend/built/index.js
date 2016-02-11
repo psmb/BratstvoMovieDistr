@@ -1,0 +1,1 @@
+$(function(){$(".owl-carousel").owlCarousel({items:1,loop:!0,nav:!1})});
