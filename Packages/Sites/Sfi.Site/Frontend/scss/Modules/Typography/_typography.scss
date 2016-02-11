@@ -28,7 +28,7 @@
 .Heading--small {
 	font-family: $fontFamily-alt;
 	font-weight: 700;
-	font-size: rem-calc(24);
+	font-size: rem-calc(18);
 	@include breakpoint('medium') {
 		font-size: rem-calc(24);
 	}
@@ -38,7 +38,7 @@
 
 .Quote {
 	font-style: italic;
-	font-size: rem-calc(30);
+	font-size: rem-calc(18);
 	@include breakpoint('medium') {
 		font-size: rem-calc(30);
 	}
