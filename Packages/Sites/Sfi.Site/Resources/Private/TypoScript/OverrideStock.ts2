@@ -6,7 +6,7 @@ prototype(TYPO3.Neos.NodeTypes:Text) {
     attributes.class = 'Text marginVertical-double'
 }
 prototype(TYPO3.Neos.NodeTypes:Headline) {
-    attributes.class = 'Heading marginTop-double marginBottom-single'
+    attributes.class = 'Heading--large marginTop-double marginBottom-single'
 }
 prototype(Sfi.YouTube:YouTube) {
     attributes.class = 'flex-video widescreen'

@@ -14,12 +14,24 @@
 	line-height: $lineHeight-normal;
 }
 
-.Heading {
+.Heading--large {
 	font-family: $fontFamily-alt;
-	font-size: rem-calc(48);
+	font-size: rem-calc(32);
 	font-weight: 700;
 	@include breakpoint('medium') {
 		font-size: rem-calc(60);
+	}
+	text-align: center;
+	text-transform: uppercase;
+	line-height: $lineHeight-tight;
+}
+
+.Heading {
+	font-family: $fontFamily-alt;
+	font-size: rem-calc(18);
+	font-weight: 700;
+	@include breakpoint('medium') {
+		font-size: rem-calc(32);
 	}
 	text-align: center;
 	text-transform: uppercase;

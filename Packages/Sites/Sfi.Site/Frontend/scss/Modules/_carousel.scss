@@ -24,11 +24,15 @@ $dot-background-active:	$red;
 .owl-theme {
 	// Styling Next and Prev buttons
 	.owl-nav {
+        display: none;
+        @include breakpoint('medium') {
+            display: block;
+        }
 		-webkit-tap-highlight-color: transparent;
 
 		[class*='owl-'] {
             position: absolute;
-            top: 40%;
+            top: calc(50% - 32px);
             padding: $nav-padding;
             font-weight: bold;
             border-radius: 50%;
