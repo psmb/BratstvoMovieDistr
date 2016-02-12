@@ -4,7 +4,7 @@ include: NodeTypes/**/*.ts2
 # This is a default page object.
 prototype(Sfi.Site:Root) < prototype(TYPO3.Neos:Page) {
 	head {
-		titleTag.content = ${String.stripTags(q(node).property('title')) + ' | ' + Translation.translate('common.sitetitle.short', null, [], null, 'Sfi.Site')}
+		titleTag.content = ${String.stripTags(q(node).property('title'))}
 		stylesheets.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://Sfi.Site/Private/Partials/SharedResources.html'
 			sectionName = 'stylesheets'
