@@ -2,7 +2,8 @@ $(function () {
 	$('.owl-carousel').owlCarousel({
 		items: 1,
     loop: true,
-		nav: false
+		nav: true,
+		navText: ['<','>']
 	});
 	window.sr = new scrollReveal();
 });
