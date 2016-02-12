@@ -72,6 +72,12 @@
     video:
       type: 'Sfi.YouTube:YouTube'
   properties:
+    inverse:
+      type: boolean
+      ui:
+        label: 'Отразить'
+        inspector:
+          group: type
     quote:
       type: string
       ui:
@@ -101,6 +107,12 @@
     image:
       type: 'TYPO3.Neos.NodeTypes:Image'
   properties:
+    inverse:
+      type: boolean
+      ui:
+        label: 'Отразить'
+        inspector:
+          group: type
     quote:
       type: string
       ui:
