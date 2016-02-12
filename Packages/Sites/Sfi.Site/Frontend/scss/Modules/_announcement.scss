@@ -1,0 +1,13 @@
+.Announcement {
+    border: $border-thin;
+    border-left-width: 0;
+    text-align: center;
+}
+.Announcement:first-child {
+    border-left-width: 1px;
+}
+
+.Announcement-place, .Announcement-town {
+    text-transform: uppercase;
+    line-height: $lineHeight-normal;
+}
