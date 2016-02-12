@@ -20,6 +20,7 @@ function onYouTubePlayerAPIReady () {
 }
 
 function onPlayerReady (e) {
+	$("#trailer-play").show();
 	e.target.mute();
 	e.target.playVideo();
 }
