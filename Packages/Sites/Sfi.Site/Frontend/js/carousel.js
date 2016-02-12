@@ -1,9 +1,9 @@
 $(function () {
 	$('.owl-carousel').owlCarousel({
 		items: 1,
-    loop: true,
+		loop: true,
 		nav: true,
-		navText: ['<','>']
+		navText: ['&#10096;', '&#10097;']
 	});
 	window.sr = new scrollReveal();
 });
