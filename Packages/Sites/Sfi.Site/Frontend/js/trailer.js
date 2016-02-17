@@ -1,6 +1,7 @@
 var trailer;
+var md = new MobileDetect(window.navigator.userAgent);
 
-function onYouTubePlayerAPIReady () {
+function onYouTubePlayerAPIReady() {
 	trailer = new YT.Player('trailer', {
 		events: {
 			onReady: onPlayerReady,
@@ -9,20 +10,22 @@ function onYouTubePlayerAPIReady () {
 	});
 }
 
-function onPlayerReady (e) {
-	$("#trailer-play").show();
-	e.target.mute();
-	e.target.playVideo();
+function onPlayerReady(e) {
+	if (md.mobile() === null) {
+		$('#trailer-play').show();
+		e.target.mute();
+		e.target.playVideo();
+	}
 }
-function onPlayerStateChange (e) {
+function onPlayerStateChange(e) {
 	if (e.data === YT.PlayerState.ENDED) {
 		e.target.mute();
-		$("#trailer-play").show();
+		$('#trailer-play').show();
 	}
 }
 
 $(function () {
-	$("#trailer-play").click(function (e) {
+	$('#trailer-play').click(function (e) {
 		e.preventDefault();
 		trailer.seekTo(0);
 		trailer.unMute();

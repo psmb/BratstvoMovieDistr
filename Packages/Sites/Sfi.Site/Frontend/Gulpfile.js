@@ -12,7 +12,8 @@ var cssnano = require('gulp-cssnano');
 var inputVendorJs = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/owl-carousel-2/owl.carousel.min.js',
-	'./node_modules/scrollreveal/dist/scrollReveal.min.js'
+	'./node_modules/scrollreveal/dist/scrollReveal.min.js',
+	'./node_modules/mobile-detect/mobile-detect.min.js'
 ];
 var inputVendorCss = [
 	'./node_modules/owl-carousel-2/assets/owl.carousel.min.css'
