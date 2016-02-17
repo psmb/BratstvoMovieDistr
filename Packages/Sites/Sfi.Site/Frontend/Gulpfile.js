@@ -9,19 +9,19 @@ var concatCss = require('gulp-concat-css');
 var cssnano = require('gulp-cssnano');
 
 // Input configuration
-var inputVendorJs = [
+var inputJs = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/owl-carousel-2/owl.carousel.min.js',
 	'./node_modules/scrollreveal/dist/scrollReveal.min.js',
-	'./node_modules/mobile-detect/mobile-detect.min.js'
+	'./node_modules/mobile-detect/mobile-detect.min.js',
+	'./js/**/*.js'
 ];
 var inputVendorCss = [
 	'./node_modules/owl-carousel-2/assets/owl.carousel.min.css'
 ];
-var inputMyJs = ['./js/**/*.js'];
 var inputMySass = ['./scss/**/*.scss'];
 
-var allTasks = ['mySass', 'vendorJs', 'myJs', 'vendorCss'];
+var allTasks = ['mySass', 'js', 'vendorCss'];
 var output = './built';
 
 gulp.task('serve', allTasks, function () {
@@ -33,22 +33,15 @@ gulp.task('serve', allTasks, function () {
 		.on('change', function (event) {
 			console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 		});
-	gulp.watch(inputMyJs, ['myJs'])
+	gulp.watch(inputJs, ['js'])
 		.on('change', function (event) {
 			console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 		});
 });
 
-gulp.task('vendorJs', function () {
+gulp.task('js', function () {
 	return gulp
-		.src(inputVendorJs)
-		.pipe(concatJs('vendor.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest(output));
-});
-gulp.task('myJs', function () {
-	return gulp
-		.src(inputMyJs)
+		.src(inputJs)
 		.pipe(concatJs('index.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(output));
