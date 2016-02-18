@@ -31,8 +31,10 @@
 </head>
 <body>
 	<f:section name="bodyScripts">
-		<script src="{f:uri.resource(path: 'Built/indexSync.js', package: 'Sfi.Site')}?{f:format.date(date:'now',format:'U')}"></script>
-		<script async src="{f:uri.resource(path: 'Built/index.js', package: 'Sfi.Site')}?{f:format.date(date:'now',format:'U')}"></script>
+		<f:if condition="{node.context.workspace.name} == 'live'">
+			<script src="{f:uri.resource(path: 'Built/indexSync.js', package: 'Sfi.Site')}?{f:format.date(date:'now',format:'U')}"></script>
+			<script async src="{f:uri.resource(path: 'Built/index.js', package: 'Sfi.Site')}?{f:format.date(date:'now',format:'U')}"></script>
+		</f:if>
 		<f:render partial="Analytics" />
 	</f:section>
 </body>
