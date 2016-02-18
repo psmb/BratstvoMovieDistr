@@ -84,18 +84,24 @@
         inlineEditable: TRUE
         aloha:
           placeholder: 'Текст цитаты'
+          'link':
+            'a': TRUE
     speaker:
       type: string
       ui:
         inlineEditable: TRUE
         aloha:
           placeholder: 'Автор цитатц'
+          'link':
+            'a': TRUE
     speakerInfo:
       type: string
       ui:
         inlineEditable: TRUE
         aloha:
           placeholder: 'Информация об авторе'
+          'link':
+            'a': TRUE
 
 'Sfi.Site:ImageQuote':
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('speaker') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
@@ -119,15 +125,21 @@
         inlineEditable: TRUE
         aloha:
           placeholder: 'Текст цитаты'
+          'link':
+            'a': TRUE
     speaker:
       type: string
       ui:
         inlineEditable: TRUE
         aloha:
           placeholder: 'Автор цитатц'
+          'link':
+            'a': TRUE
     speakerInfo:
       type: string
       ui:
         inlineEditable: TRUE
         aloha:
           placeholder: 'Информация об авторе'
+          'link':
+            'a': TRUE
