@@ -5,5 +5,4 @@ $(function () {
 		nav: true,
 		navText: ['&#10096;', '&#10097;']
 	});
-	window.sr = new scrollReveal();
 });
