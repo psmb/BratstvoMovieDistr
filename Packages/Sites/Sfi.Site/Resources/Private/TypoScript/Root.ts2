@@ -38,6 +38,7 @@ prototype(Sfi.Site:Root) < prototype(TYPO3.Neos:Page) {
 			templatePath = 'resource://Sfi.Site/Private/Partials/SharedResources.html'
 			partialRootPath = 'resource://Sfi.Site/Private/Partials'
 			sectionName = 'bodyScripts'
+			@if.isLive = ${node.context.workspaceName == 'live'}
 		}
 	}
 }
