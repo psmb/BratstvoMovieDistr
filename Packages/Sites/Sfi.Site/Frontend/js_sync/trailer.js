@@ -23,7 +23,7 @@ function onPlayerStateChange(e) {
 	}
 }
 
-var playerButton = document.querySelector('#trailer-play');
+var playerButton = document.getElementById('trailer-play');
 playerButton.addEventListener('click', function (e) {
 	e.preventDefault();
 	trailer.seekTo(0);

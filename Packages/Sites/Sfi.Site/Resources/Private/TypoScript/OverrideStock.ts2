@@ -9,10 +9,17 @@ prototype(TYPO3.Neos.NodeTypes:Headline) {
 	attributes.class = 'Heading--large marginTop-double marginBottom-single'
 }
 
-prototype(Sfi.YouTube:YouTube) {
+prototype(Sfi.YouTube:YouTube)>
+prototype(Sfi.YouTube:YouTube) < prototype(TYPO3.TypoScript:Tag) {
 	attributes.class = 'flex-video widescreen'
-	content.attributes {
-		src>
-		data-src = ${'//www.youtube.com/embed/' + videoId + '?' + Configuration.setting('Sfi.YouTube.embedParams')}
+	content = TYPO3.TypoScript:Tag {
+		@context.videoId = ${String.pregMatch(q(node).property('videoUrl'), '/(?:(?:youtu\.be\/)||(?:\?v=))([a-z0-9-]{11})/i')[1]}
+		attributes {
+			class = 'lazyYT'
+			data-youtube-id = ${videoId}
+			data-ratio = '16:9'
+			# data-parameters = ${Configuration.setting('Sfi.YouTube.embedParams')}
+		}
 	}
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 }

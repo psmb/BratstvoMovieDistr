@@ -11,7 +11,6 @@ var sourcemaps = require('gulp-sourcemaps');
 
 // Input configuration
 var inputAssets = [
-	'./node_modules/lazyloadxt/dist/loading.gif'
 ];
 var inputJsSync = [
 	'./node_modules/mobile-detect/mobile-detect.min.js',
@@ -21,12 +20,10 @@ var inputJs = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/scrollreveal/dist/scrollReveal.min.js',
 	'./node_modules/owl-carousel-2/owl.carousel.min.js',
-	'./node_modules/lazyloadxt/dist/jquery.lazyloadxt.extra.min.js',
 	'./vendor_js/**/*.js',
 	'./js/**/*.js'
 ];
 var inputVendorCss = [
-	'./node_modules/lazyloadxt/dist/jquery.lazyloadxt.spinner.css',
 	'./node_modules/owl-carousel-2/assets/owl.carousel.min.css',
 	'./vendor_css/**/*.css'
 ];
