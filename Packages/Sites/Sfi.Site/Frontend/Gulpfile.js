@@ -10,6 +10,9 @@ var cssnano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Input configuration
+var inputAssets = [
+	'./node_modules/lazyloadxt/dist/loading.gif'
+];
 var inputJs = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/scrollreveal/dist/scrollReveal.min.js',
@@ -26,7 +29,7 @@ var inputVendorCss = [
 ];
 var inputSass = ['./scss/**/*.scss'];
 
-var allTasks = ['sass', 'js', 'vendorCss'];
+var allTasks = ['sass', 'js', 'vendorCss', 'assets'];
 var output = './built';
 
 gulp.task('serve', allTasks, function () {
@@ -44,6 +47,11 @@ gulp.task('serve', allTasks, function () {
 		});
 });
 
+gulp.task('assets', function () {
+	return gulp
+		.src(inputAssets)
+		.pipe(gulp.dest(output));
+});
 gulp.task('js', function () {
 	return gulp
 		.src(inputJs)
