@@ -13,11 +13,14 @@ var sourcemaps = require('gulp-sourcemaps');
 var inputAssets = [
 	'./node_modules/lazyloadxt/dist/loading.gif'
 ];
+var inputJsSync = [
+	'./node_modules/mobile-detect/mobile-detect.min.js',
+	'./js_sync/**/*.js'
+];
 var inputJs = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/scrollreveal/dist/scrollReveal.min.js',
 	'./node_modules/owl-carousel-2/owl.carousel.min.js',
-	'./node_modules/mobile-detect/mobile-detect.min.js',
 	'./node_modules/lazyloadxt/dist/jquery.lazyloadxt.extra.min.js',
 	'./vendor_js/**/*.js',
 	'./js/**/*.js'
@@ -29,7 +32,7 @@ var inputVendorCss = [
 ];
 var inputSass = ['./scss/**/*.scss'];
 
-var allTasks = ['sass', 'js', 'vendorCss', 'assets'];
+var allTasks = ['sass', 'js', 'jsSync', 'vendorCss', 'assets'];
 var output = './built';
 
 gulp.task('serve', allTasks, function () {
@@ -57,6 +60,15 @@ gulp.task('js', function () {
 		.src(inputJs)
 		.pipe(sourcemaps.init())
 		.pipe(concatJs('index.js'))
+		.pipe(uglify())
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(output));
+});
+gulp.task('jsSync', function () {
+	return gulp
+		.src(inputJsSync)
+		.pipe(sourcemaps.init())
+		.pipe(concatJs('indexSync.js'))
 		.pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(output));
