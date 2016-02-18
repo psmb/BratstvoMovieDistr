@@ -1,14 +1,15 @@
 var trailer;
 var md = new MobileDetect(window.navigator.userAgent);
 
-function onYouTubePlayerAPIReady() {
+window.onYouTubePlayerAPIReady = function () {
+	console.log('ready');
 	trailer = new YT.Player('trailer', {
 		events: {
 			onReady: onPlayerReady,
 			onStateChange: onPlayerStateChange
 		}
 	});
-}
+};
 
 function onPlayerReady(e) {
 	if (md.mobile() === null) {
