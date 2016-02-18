@@ -1,13 +1,18 @@
 prototype(TYPO3.Neos.NodeTypes:Image) {
-    templatePath = 'resource://Sfi.Site/Private/Templates/NodeTypes/Image.html'
-    maximumWidth = 1920
+	templatePath = 'resource://Sfi.Site/Private/Templates/NodeTypes/Image.html'
+	maximumWidth = 1920
 }
 prototype(TYPO3.Neos.NodeTypes:Text) {
-    attributes.class = 'Text marginVertical-double'
+	attributes.class = 'Text marginVertical-double'
 }
 prototype(TYPO3.Neos.NodeTypes:Headline) {
-    attributes.class = 'Heading--large marginTop-double marginBottom-single'
+	attributes.class = 'Heading--large marginTop-double marginBottom-single'
 }
+
 prototype(Sfi.YouTube:YouTube) {
-    attributes.class = 'flex-video widescreen'
+	attributes.class = 'flex-video widescreen'
+	content.attributes {
+		src>
+		data-src = ${'//www.youtube.com/embed/' + videoId + '?' + Configuration.setting('Sfi.YouTube.embedParams')}
+	}
 }
