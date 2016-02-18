@@ -1,36 +1,33 @@
 var trailer;
 var md = new MobileDetect(window.navigator.userAgent);
 
-window.onYouTubePlayerAPIReady = function () {
-	console.log('ready');
+function onYouTubePlayerAPIReady() {
 	trailer = new YT.Player('trailer', {
 		events: {
 			onReady: onPlayerReady,
 			onStateChange: onPlayerStateChange
 		}
 	});
-};
-
+}
 function onPlayerReady(e) {
 	if (md.mobile() === null) {
-		$('#trailer-play').show();
+		playerButton.style.display = '';
 		e.target.mute();
 		e.target.playVideo();
 	}
 }
 function onPlayerStateChange(e) {
 	if (e.data === YT.PlayerState.ENDED) {
+		playerButton.style.display = '';
 		e.target.mute();
-		$('#trailer-play').show();
 	}
 }
 
-$(function () {
-	$('#trailer-play').click(function (e) {
-		e.preventDefault();
-		trailer.seekTo(0);
-		trailer.unMute();
-		trailer.playVideo();
-		$(this).hide();
-	});
+var playerButton = document.querySelector('#trailer-play');
+playerButton.addEventListener('click', function (e) {
+	e.preventDefault();
+	trailer.seekTo(0);
+	trailer.unMute();
+	trailer.playVideo();
+	playerButton.style.display = 'none';
 });
