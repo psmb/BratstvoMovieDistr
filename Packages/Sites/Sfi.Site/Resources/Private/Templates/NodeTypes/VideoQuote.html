@@ -2,11 +2,11 @@
 
 <div data-sr class="paddingVertical-triple">
     <div class="Asterisks marginBottom-triple">***</div>
-    <div class="Quote paddingBottom-triple">{neos:contentElement.editable(property: 'quote')}</div>
+    <div class="Quote paddingBottom-triple RteText">{neos:contentElement.editable(property: 'quote')}</div>
     <div class="row">
         <div class="{f:if(condition: inverse, then:'medium-order-2')} small-12 medium-4 columns marginBottom-single">
-            <div class="Heading--small marginBottom-half">{neos:contentElement.editable(property: 'speaker')}</div>
-            <div class="Text--small">{neos:contentElement.editable(property: 'speakerInfo')}</div>
+            <div class="Heading--small marginBottom-half RteText">{neos:contentElement.editable(property: 'speaker')}</div>
+            <div class="Text--small RteText">{neos:contentElement.editable(property: 'speakerInfo')}</div>
         </div>
         <div class="{f:if(condition: inverse, then:'medium-order-1')} small-12 medium-8 columns">{video -> f:format.raw()}</div>
     </div>
