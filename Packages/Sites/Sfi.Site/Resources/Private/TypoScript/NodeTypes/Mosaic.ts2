@@ -3,7 +3,7 @@ prototype(Sfi.Site:Mosaic) < prototype(TYPO3.TypoScript:Tag) {
 	content = TYPO3.Neos:ContentCollectionRenderer
 
 	prototype(TYPO3.Neos.NodeTypes:Image) {
-		attributes.class = 'Mosaic-item small-6 medium-3 large-3 column'
+		attributes.class = 'Mosaic-item'
 		width = 480
 		height = 480
 		maximumWidth = 480
