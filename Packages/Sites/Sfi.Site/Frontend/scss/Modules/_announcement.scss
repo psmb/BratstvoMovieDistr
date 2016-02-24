@@ -2,6 +2,10 @@
     border: $border-thin;
     border-left-width: 0;
     text-align: center;
+    transition: $transition;
+    &:hover {
+        background-color: $gray-bg--light;
+    }
 }
 .Announcement:first-child {
     border-left-width: 1px;
@@ -10,4 +14,10 @@
 .Announcement-place, .Announcement-town {
     text-transform: uppercase;
     line-height: $lineHeight-normal;
+}
+.Announcement-date {
+    font-size: rem-calc(24) !important;
+    @include breakpoint('medium') {
+		font-size: rem-calc(48) !important;
+	}
 }

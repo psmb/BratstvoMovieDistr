@@ -62,6 +62,52 @@
     label: 'Мозайка'
 
 
+'Sfi.Site:AnnouncementList':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:ContentCollection': TRUE
+  ui:
+    label: 'Блок анонсов'
+
+'Sfi.Site:Announcement':
+  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('town') || q(node).property('address') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Анонс'
+  properties:
+    date:
+      type: DateTime
+      ui:
+        label: 'Дата и время анонса'
+        inspector:
+          group: type
+          editorOptions:
+            format: 'd-m-Y H:i'
+    link:
+      type: string
+      ui:
+        label: 'Ссылка на анонс'
+        inspector:
+          group: type
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    town:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Город'
+          'link':
+            'a': TRUE
+    address:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Адрес'
+          'link':
+            'a': TRUE
+
 'Sfi.Site:VideoQuote':
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('speaker') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   superTypes:

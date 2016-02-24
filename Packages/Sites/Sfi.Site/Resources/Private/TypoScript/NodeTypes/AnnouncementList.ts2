@@ -1,0 +1,14 @@
+prototype(Sfi.Site:AnnouncementList) < prototype(TYPO3.TypoScript:Tag) {
+	attributes.class = 'AnnouncementList row collapse'
+	content = TYPO3.Neos:ContentCollectionRenderer
+
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+    @process.wrap = ${'<div>' + value + '</div>'}
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
+}
