@@ -1,7 +1,7 @@
 .Text, .Text p {
 	font-size: rem-calc(14);
 	@include breakpoint('medium') {
-		font-size: rem-calc(18);
+		font-size: rem-calc(21);
 	}
 	line-height: $lineHeight-normal;
 	padding-bottom: $lineHeight-normal*$u;
