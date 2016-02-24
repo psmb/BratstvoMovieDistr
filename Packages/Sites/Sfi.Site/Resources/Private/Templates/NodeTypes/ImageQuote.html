@@ -1,12 +1,12 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
-<div data-sr class="paddingVertical-triple">
+<div data-sr="vFactor 0.4" class="paddingVertical-triple">
     <div class="Quote paddingBottom-triple RteText">{neos:contentElement.editable(property: 'quote')}</div>
     <div class="row">
-        <div class="{f:if(condition: inverse, then:'medium-order-2')} small-12 medium-6 columns marginBottom-single" data-sr='enter left and then move 100px'>
+        <div class="{f:if(condition: inverse, then:'medium-order-2')} small-12 medium-6 columns marginBottom-single">
             <div class="Heading--small marginBottom-half RteText">{neos:contentElement.editable(property: 'speaker')}</div>
             <div class="Text--small RteText">{neos:contentElement.editable(property: 'speakerInfo')}</div>
         </div>
-        <div class="{f:if(condition: inverse, then:'medium-order-1')} small-12 medium-6 columns" data-sr='enter right and then move 100px'>{image -> f:format.raw()}</div>
+        <div class="{f:if(condition: inverse, then:'medium-order-1')} small-12 medium-6 columns">{image -> f:format.raw()}</div>
     </div>
 </div>
