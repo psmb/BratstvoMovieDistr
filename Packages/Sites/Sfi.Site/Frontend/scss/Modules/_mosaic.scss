@@ -16,8 +16,8 @@
     width: 100%;
 }
 .Mosaic-item figcaption {
-    display: none;
     position: absolute;
+    opacity: 0;
     top: 0;
     right: 0;
     left: 0;
@@ -26,6 +26,7 @@
     color: white;
     font-size: rem-calc(14);
     padding: $u;
+    transition: $transition;
     @media (min-width: 360px) and (max-width: 511px), (min-width: 720px) and (max-width: 1023px), (min-width: 1400px) {
         font-size: rem-calc(18);
         padding: 1.5*$u 2*$u;
@@ -41,5 +42,5 @@
     background-color: transparentize($blue, 0.2);
 }
 .Mosaic-item:hover figcaption {
-    display: block;
+    opacity: 1;
 }
