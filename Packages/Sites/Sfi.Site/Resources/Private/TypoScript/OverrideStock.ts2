@@ -1,6 +1,7 @@
 prototype(TYPO3.Neos.NodeTypes:Image) {
 	templatePath = 'resource://Sfi.Site/Private/Templates/NodeTypes/Image.html'
 	maximumWidth = 1920
+	alternativeText = ${node.properties.alternativeText ? node.properties.alternativeText : String.stripTags(node.properties.caption)}
 }
 prototype(TYPO3.Neos.NodeTypes:Text) {
 	attributes.class = 'Text marginVertical-double RteText'
