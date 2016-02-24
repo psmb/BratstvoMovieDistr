@@ -4,7 +4,7 @@ prototype(Sfi.Site:Carousel) < prototype(TYPO3.TypoScript:Tag) {
 	content = TYPO3.Neos:ContentCollectionRenderer
 
 	prototype(TYPO3.Neos.NodeTypes:Image) {
-		attributes.class = 'Carousel-Item'
+		attributes.class = 'Carousel-item'
 		maximumWidth = ${q(carouselNode).property('variant') == 'narrow' ? 800 : 1920}
 		maximumHeight = ${q(carouselNode).property('variant') == 'narrow' ? 533 : 1280}
 	}

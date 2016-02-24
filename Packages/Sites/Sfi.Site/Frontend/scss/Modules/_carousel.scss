@@ -99,3 +99,19 @@ $dot-background-active:	$red;
 		}
 	}
 }
+
+.Carousel-item {
+	position: relative;
+}
+.Carousel-item figcaption {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.3;
+	background-color: black;
+    text-align: left;
+    color: white;
+	font-style: italic;
+    padding: $u/2 $u;
+}
