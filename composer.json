@@ -14,7 +14,8 @@
         "typo3/form": "@dev",
         "typo3/setup": "@dev",
 
-        "sfi/youtube": "^0.1"
+        "sfi/youtube": "^0.1",
+        "typo3/neos-seo": "^1.0"
     },
     "scripts": {
         "post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
