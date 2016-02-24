@@ -1,8 +1,8 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <!-- This code is just a horible mess! -->
-<f:if condition="{!neos:rendering.inEditMode()}">
-    <f:then><a class="small-12 medium-6 columns Announcement paddingVertical-triple paddingHorizontal-single" href="{link}"></f:then>
-    <f:else><div class="small-12 medium-6 columns Announcement paddingVertical-triple paddingHorizontal-single" href="{link}"></f:else>
+<f:if condition="{neos:rendering.inEditMode()}">
+    <f:then><div class="small-12 medium-6 columns Announcement paddingVertical-triple paddingHorizontal-single" href="{link}"></f:then>
+    <f:else><a class="small-12 medium-6 columns Announcement paddingVertical-triple paddingHorizontal-single" href="{link}"></f:else>
 </f:if>
         <div class="Announcement-date Heading marginBottom-single">
             <f:format.date forceLocale="{true}" cldrFormat="dd MMMM HH:mm">{date}</f:format.date>
@@ -11,7 +11,7 @@
         <div class="Announcement-place">{neos:contentElement.editable(property: 'address')}</div>
     <f:if condition="{neos:rendering.inEditMode()}">
     </f:if>
-<f:if condition="{!neos:rendering.inEditMode()}">
-    <f:then></a></f:then>
-    <f:else></div></f:else>
+<f:if condition="{neos:rendering.inEditMode()}">
+    <f:then></div></f:then>
+    <f:else></a></f:else>
 </f:if>
