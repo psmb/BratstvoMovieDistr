@@ -12,8 +12,9 @@
   superTypes:
     'TYPO3.Neos:Content': TRUE
     'TYPO3.Neos:ContentCollection': TRUE
+  label: "${String.trim(String.stripTags(q(node).property('variant'))) + ' - Секция ограниченной ширины'}"
   ui:
-    label: 'Секция ограниченной ширины'
+    label: "Секция ограниченной ширины"
   properties:
     variant:
       defaultValue: wide
