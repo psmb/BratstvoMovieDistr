@@ -1,0 +1,25 @@
+prototype(Sfi.Site:Collapse) < prototype(TYPO3.TypoScript:Tag) {
+	attributes.class = 'Collapse js-Collapse'
+	content = TYPO3.TypoScript:Array {
+        10 = TYPO3.TypoScript:Tag {
+            attributes.class = 'Collapse-content js-Collapse-content'
+            content = TYPO3.Neos:ContentCollectionRenderer
+        }
+        20 = TYPO3.TypoScript:Tag {
+            tagName = 'a'
+            attributes.href = '#'
+            attributes.class = 'Collapse-toggle js-Collapse-toggle'
+            content = ${'<div class="Collapse-toggleShow">' + node.properties.showText + '</div><div class="Collapse-toggleHide">' + node.properties.hideText + '</div>'}
+        }
+    }
+
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.wrap = ${'<div>' + value + '</div>'}
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
+}

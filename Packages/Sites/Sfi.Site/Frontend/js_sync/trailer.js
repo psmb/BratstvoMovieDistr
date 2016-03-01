@@ -24,10 +24,12 @@ function onPlayerStateChange(e) {
 }
 
 var playerButton = document.getElementById('trailer-play');
-playerButton.addEventListener('click', function (e) {
-	e.preventDefault();
-	trailer.seekTo(0);
-	trailer.unMute();
-	trailer.playVideo();
-	playerButton.style.display = 'none';
-});
+if (playerButton) {
+	playerButton.addEventListener('click', function (e) {
+		e.preventDefault();
+		trailer.seekTo(0);
+		trailer.unMute();
+		trailer.playVideo();
+		playerButton.style.display = 'none';
+	});
+}

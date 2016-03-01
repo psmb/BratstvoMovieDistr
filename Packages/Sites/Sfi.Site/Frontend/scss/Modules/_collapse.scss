@@ -1,0 +1,27 @@
+.Collapse-toggleShow {
+    display: none;
+}
+.js-Collapse-isCollapsed {
+    .js-Collapse-content {
+        display: none;
+    }
+    .Collapse-toggleHide {
+        display: none;
+    }
+    .Collapse-toggleShow {
+        display: block;
+    }
+}
+
+
+.Collapse-toggle {
+    display: block;
+    color: $red;
+    text-align: center;
+    margin-top: $u;
+    margin-bottom: 3*$u;
+    transition: $transition;
+    &:hover {
+        text-decoration: underline;
+    }
+}

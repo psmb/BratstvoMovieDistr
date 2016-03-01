@@ -32,6 +32,28 @@
               narrow:
                 label: Узкий
 
+'Sfi.Site:Collapse':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:ContentCollection': TRUE
+  ui:
+    label: "Схлоповалка"
+  properties:
+    showText:
+      type: string
+      defaultValue: 'Показать еще'
+      ui:
+        label: 'Текст на кнопке (показать еще)'
+        inspector:
+          group: type
+    hideText:
+      type: string
+      defaultValue: 'Спрятать'
+      ui:
+        label: 'Текст на кнопке (спрятать)'
+        inspector:
+          group: type
+
 'Sfi.Site:Carousel':
   superTypes:
     'TYPO3.Neos:Content': TRUE
