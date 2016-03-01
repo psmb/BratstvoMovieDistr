@@ -5,7 +5,8 @@
     <f:else><a href="{link}" class="small-12 medium-6 columns Announcement paddingVertical-triple paddingHorizontal-single"></f:else>
 </f:if>
     <div class="Announcement-date Heading marginBottom-single">
-        <f:format.date forceLocale="{true}" cldrFormat="dd MMMM HH:mm">{date}</f:format.date>
+        <f:format.date forceLocale="{true}" cldrFormat="dd MMMM">{date}</f:format.date><br/>
+        <f:format.date forceLocale="{true}" cldrFormat="HH:mm">{date}</f:format.date>
     </div>
     <div class="Announcement-town color-primary">{neos:contentElement.editable(property: 'town')}</div>
     <div class="Announcement-place">{neos:contentElement.editable(property: 'address')}</div>
