@@ -1,6 +1,21 @@
 'TYPO3.Neos.NodeTypes:Page':
   abstract: TRUE
 
+'Sfi.Site:MenuSection':
+  label: "${String.trim(String.stripTags(q(node).property('menuTitle'))) + ' - Секция'}"
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:ContentCollection': TRUE
+  ui:
+    label: "Секция для меню"
+  properties:
+    menuTitle:
+      type: string
+      ui:
+        label: 'Заголовок в меню'
+        inspector:
+          group: type
+
 'Sfi.Site:Page':
   superTypes:
     'TYPO3.Neos.NodeTypes:Page': TRUE

@@ -1,0 +1,13 @@
+prototype(Sfi.Site:SectionMenuItem) < prototype(TYPO3.TypoScript:Tag) {
+    tagName = 'a'
+    attributes.href = ${'#' + q(node).property('_name')}
+    content = ${q(node).property('menuTitle')}
+    @process.wrap = ${'<li class="SectionMenu-item small-4 large-2 columns">' + value + '</li>'}
+}
+
+prototype(Sfi.Site:SectionMenu) < prototype(TYPO3.TypoScript:Collection) {
+    collection = ${q(documentNode).find('[instanceof Sfi.Site:MenuSection]')}
+    itemName = 'node'
+    itemRenderer = Sfi.Site:SectionMenuItem
+    @process.wrap = ${'<ul class="SectionMenu row collapse full-width">' + value + '</ul>'}
+}
