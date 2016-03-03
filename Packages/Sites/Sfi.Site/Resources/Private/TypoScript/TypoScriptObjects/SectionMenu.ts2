@@ -9,5 +9,5 @@ prototype(Sfi.Site:SectionMenu) < prototype(TYPO3.TypoScript:Collection) {
     collection = ${q(documentNode).find('[instanceof Sfi.Site:MenuSection]')}
     itemName = 'node'
     itemRenderer = Sfi.Site:SectionMenuItem
-    @process.wrap = ${'<ul class="SectionMenu row collapse full-width">' + value + '</ul>'}
+    @process.wrap = ${'<div class="SectionMenu"><ul class="row collapse">' + value + '</ul></div>'}
 }
