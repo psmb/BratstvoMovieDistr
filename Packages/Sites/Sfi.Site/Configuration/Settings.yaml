@@ -1,4 +1,9 @@
 TYPO3:
+  Flow:
+    i18n:
+      defaultLocale: 'ru'
+    http:
+      baseUri: 'https://bratstvo-film.ru/'
   Neos:
     typoScript:
       autoInclude:

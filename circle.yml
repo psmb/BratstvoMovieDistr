@@ -19,5 +19,5 @@ deployment:
     commands:
       - cd ~/ansible-deploy
       - touch 'i'
-      - ansible-playbook ~/ansible-deploy/deploy.yml --extra-vars "REPOSITORY_URL=https://github.com/psmb/BratstvoMovieDistr DOMAIN=bratstvo-film.ru HOST=server.psmb.ru PORT=1126" -i 'i':
+      - ansible-playbook ~/ansible-deploy/deploy.yml --extra-vars "REPOSITORY_URL=https://github.com/psmb/BratstvoMovieDistr DOMAIN=bratstvo-film.ru HOST=server.psmb.ru PORT=1126 PROTOCOL=https" -i 'i':
           timeout: 1800
