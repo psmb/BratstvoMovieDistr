@@ -7,7 +7,7 @@
         "bin-dir": "bin"
     },
     "require": {
-        "neos/neos-development-collection": "2.2.x-dev",
+        "neos/neos-development-collection": "2.3.x-dev",
         "neos/flow-development-collection": "@dev",
 
         "typo3/party": "@dev",
