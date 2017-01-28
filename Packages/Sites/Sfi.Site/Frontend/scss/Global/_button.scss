@@ -1,0 +1,13 @@
+.Button {
+	font-family: Franklin,sans-serif;
+	background-color: $color-primary;
+	padding: 1.5*$u 2*$u;
+	font-size: rem-calc(21);
+	margin: 0 auto;
+	display: inline-block;
+	color: white;
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: darken($color-primary, 10%);
+	}
+}
