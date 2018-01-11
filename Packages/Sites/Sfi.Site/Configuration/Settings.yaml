@@ -2,8 +2,24 @@ TYPO3:
   Flow:
     i18n:
       defaultLocale: 'ru'
-    http:
-      baseUri: 'https://bratstvo-film.ru/'
+    resource:
+      collections:
+        persistent:
+          storage: s3PersistentResourcesStorage
+          target: s3PersistentResourcesTarget
+      storages:
+        s3PersistentResourcesStorage:
+          storage: 'Flownative\Aws\S3\S3Storage'
+          storageOptions:
+            bucket: 'psmb-neos-resources'
+            keyPrefix: 'storage/bratstvofilm/'
+      targets:
+        s3PersistentResourcesTarget:
+          target: 'Flownative\Aws\S3\S3Target'
+          targetOptions:
+            bucket: 'psmb-neos-resources'
+            keyPrefix: 'target/bratstvofilm/'
+            baseUri: 'https://psmb-neos-resources.hb.bizmrg.com/target/bratstvofilm/'
   Neos:
     typoScript:
       autoInclude:
