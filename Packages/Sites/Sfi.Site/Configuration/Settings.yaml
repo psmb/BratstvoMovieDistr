@@ -44,3 +44,12 @@ TYPO3:
             label: 'English'
             values: ['en']
             uriSegment: 'en'
+Flownative:
+  Aws:
+    S3:
+      profiles:
+        default:
+          credentials:
+            key: '%env:AWS_ACCESS_KEY_ID%'
+            secret: '%env:AWS_SECRET_ACCESS_KEY%'
+          endpoint: 'https://hb.bizmrg.com'
