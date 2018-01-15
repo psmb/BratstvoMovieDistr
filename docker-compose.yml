@@ -9,6 +9,7 @@ db:
     MYSQL_USER: admin
     MYSQL_PASSWORD: pass
 web:
+  hostname: 'bratstvo-film.ru'
   image: dimaip/docker-neos-alpine:latest
   ports:
     - '80'
