@@ -10,7 +10,7 @@ db:
     MYSQL_PASSWORD: pass
 web:
   hostname: 'bratstvo-film.ru'
-  image: dimaip/docker-neos-alpine:latest
+  image: dimaip/bratstvomoviedistr:latest
   ports:
     - '80'
     - '1126:22'
