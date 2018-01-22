@@ -1,32 +1,43 @@
-db:
-  image: mariadb:10.3
-  restart: always
-  volumes:
-    - /var/lib/mysql
-  environment:
-    MYSQL_ROOT_PASSWORD: pass
-    MYSQL_DATABASE: db
-    MYSQL_USER: admin
-    MYSQL_PASSWORD: pass
-web:
-  hostname: 'bratstvo-film.ru'
-  image: dimaip/bratstvomoviedistr:latest
-  ports:
-    - '80'
-    - '1126:22'
-  links:
-    - db:db
-  volumes:
-    - /data
-    - ./Persistent:/data/shared/Data/Persistent
-  environment:
-    - PHP_TIMEZONE=Europe/Moscow
-    - VIRTUAL_HOST=bratstvo-film.ru,www.bratstvo-film.ru,dev.bratstvo-film.ru,next.bratstvo-film.ru
-    - REPOSITORY_URL=https://github.com/psmb/BratstvoMovieDistr
-    - LETSENCRYPT_HOST=bratstvo-film.ru,www.bratstvo-film.ru
-    - LETSENCRYPT_EMAIL=dimaip@gmail.com
-    - IMPORT_GITHUB_PUB_KEYS=dimaip
-    - AWS_ENDPOINT=https://hb.bizmrg.com
-    - AWS_BACKUP_ARN=s3://psmb-neos-resources/db/bratstvofilm/
-    - AWS_ACCESS_KEY_ID
-    - AWS_SECRET_ACCESS_KEY
+version: "3.1"
+services:
+  db:
+    image: mariadb:10.3
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: pass
+  web:
+    image: dimaip/1917distr:latest
+    hostname: 'bratstvofilm'
+    networks:
+      - default
+      - main
+    secrets:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.port=80"
+        - "traefik.default.protocol=http"
+        - "traefik.docker.network=main"
+        - "traefik.frontend.rule=Host:bratstvo-film.ru,www.bratstvo-film.ru,dev.bratstvo-film.ru"
+    ports:
+      - '80'
+    depends_on:
+      - db
+volumes:
+  db-data:
+secrets:
+  AWS_ACCESS_KEY_ID:
+    external: true
+  AWS_SECRET_ACCESS_KEY:
+    external: true
+networks:
+  main:
+    external:
+      name: main
+
