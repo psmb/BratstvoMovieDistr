@@ -10,7 +10,7 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: pass
   web:
-    image: dimaip/1917distr:latest
+    image: dimaip/bratstvomoviedistr:latest
     hostname: 'bratstvofilm'
     networks:
       - default
