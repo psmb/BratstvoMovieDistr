@@ -1,58 +1,4 @@
-TYPO3:
-  Flow:
-    persistence:
-      # TODO: remove when upgraded to Neos 3.x. Don't bother hacking, it's internal DB
-      backendOptions:    
-        driver: pdo_mysql
-        dbname: 'db'     
-        user: 'admin'                          
-        password: 'pass'                       
-        host: 'db'                           
-        port: 3306
-    i18n:
-      defaultLocale: 'ru'
-    resource:
-      collections:
-        persistent:
-          storage: s3PersistentResourcesStorage
-          target: s3PersistentResourcesTarget
-      storages:
-        s3PersistentResourcesStorage:
-          storage: 'Flownative\Aws\S3\S3Storage'
-          storageOptions:
-            bucket: 'psmb-neos-resources'
-            keyPrefix: 'storage/bratstvofilm/'
-      targets:
-        s3PersistentResourcesTarget:
-          target: 'Flownative\Aws\S3\S3Target'
-          targetOptions:
-            bucket: 'psmb-neos-resources'
-            keyPrefix: 'target/bratstvofilm/'
-            baseUri: 'https://psmb-neos-resources.hb.bizmrg.com/target/bratstvofilm/'
-  Neos:
-    typoScript:
-      autoInclude:
-        'Sfi.Site': TRUE
-    userInterface:
-      navigateComponent:
-        nodeTree:
-          loadingDepth: 1
-  TYPO3CR:
-    contentDimensions:
-      'language':
-        default: 'ru'
-        defaultPreset: 'ru'
-        label: 'Language'
-        icon: 'icon-language'
-        presets:
-          'ru':
-            label: 'Russian'
-            values: ['ru']
-            uriSegment: ''
-          'en':
-            label: 'English'
-            values: ['en']
-            uriSegment: 'en'
+
 Flownative:
   Aws:
     S3:
@@ -62,3 +8,59 @@ Flownative:
             key: '%env:AWS_ACCESS_KEY_ID%'
             secret: '%env:AWS_SECRET_ACCESS_KEY%'
           endpoint: 'https://hb.bizmrg.com'
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        driver: pdo_mysql
+        dbname: db
+        user: admin
+        password: pass
+        host: db
+        port: 3306
+    i18n:
+      defaultLocale: ru
+    resource:
+      collections:
+        persistent:
+          storage: s3PersistentResourcesStorage
+          target: s3PersistentResourcesTarget
+      storages:
+        s3PersistentResourcesStorage:
+          storage: Flownative\Aws\S3\S3Storage
+          storageOptions:
+            bucket: psmb-neos-resources
+            keyPrefix: storage/bratstvofilm/
+      targets:
+        s3PersistentResourcesTarget:
+          target: Flownative\Aws\S3\S3Target
+          targetOptions:
+            bucket: psmb-neos-resources
+            keyPrefix: target/bratstvofilm/
+            baseUri: 'https://psmb-neos-resources.hb.bizmrg.com/target/bratstvofilm/'
+  Neos:
+    userInterface:
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 1
+    fusion:
+      autoInclude:
+        Sfi.Site: true
+  ContentRepository:
+    contentDimensions:
+      language:
+        default: ru
+        defaultPreset: ru
+        label: Language
+        icon: icon-language
+        presets:
+          ru:
+            label: Russian
+            values:
+              - ru
+            uriSegment: ''
+          en:
+            label: English
+            values:
+              - en
+            uriSegment: en

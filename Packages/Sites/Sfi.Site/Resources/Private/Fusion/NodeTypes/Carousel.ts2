@@ -1,15 +1,15 @@
-prototype(Sfi.Site:Carousel) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Site:Carousel) < prototype(Neos.Fusion:Tag) {
 	@context.carouselNode = ${node}
 	attributes.class = ${'owl-carousel owl-theme' + (q(node).property('variant') == 'narrow' && 'owl-carousel owl-theme medium-10 medium-offset-1 large-8 large-offset-2 columns') }
-	content = TYPO3.Neos:ContentCollectionRenderer
+	content = Neos.Neos:ContentCollectionRenderer
 
-	prototype(TYPO3.Neos.NodeTypes:Image) {
+	prototype(Neos.NodeTypes:Image) {
 		attributes.class = 'Carousel-item'
 		maximumWidth = ${q(carouselNode).property('variant') == 'narrow' ? 800 : 1920}
 		maximumHeight = ${q(carouselNode).property('variant') == 'narrow' ? 533 : 1280}
 	}
 
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 	@process.wrap = ${q(node).property('variant') == 'narrow' ? '<div class="backgroundColor-lightGray paddingTop-triple paddingBottom-single"><div class="row">' + value + '</div></div>' : '<div>' + value + '</div>'}
 	@cache {
 		mode = 'cached'

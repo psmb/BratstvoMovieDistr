@@ -1,0 +1,8 @@
+prototype(Sfi.Site:MenuSection) < prototype(Neos.Fusion:Tag) {
+	attributes.class = 'scrollto'
+	attributes.id = ${q(node).property('_name')}
+	content = Neos.Neos:ContentCollection
+
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+	@process.wrap = ${'<div>' + value + '</div>'}
+}

@@ -3,14 +3,14 @@ include: TypoScriptObjects/**/*.ts2
 include: NodeTypes/**/*.ts2
 
 # This is a default page object.
-prototype(Sfi.Site:Root) < prototype(TYPO3.Neos:Page) {
+prototype(Sfi.Site:Root) < prototype(Neos.Neos:Page) {
 	head {
 		titleTag.content = ${String.stripTags(q(node).property('title'))}
-		stylesheets.site = TYPO3.TypoScript:Template {
+		stylesheets.site = Neos.Fusion:Template {
 			templatePath = 'resource://Sfi.Site/Private/Partials/SharedResources.html'
 			sectionName = 'stylesheets'
 		}
-		javascripts.headScripts = TYPO3.TypoScript:Template {
+		javascripts.headScripts = Neos.Fusion:Template {
 			templatePath = 'resource://Sfi.Site/Private/Partials/SharedResources.html'
 			sectionName = 'headScripts'
 		}
@@ -32,7 +32,7 @@ prototype(Sfi.Site:Root) < prototype(TYPO3.Neos:Page) {
 			}
 		}
 
-		javascripts.bodyScripts = TYPO3.TypoScript:Template {
+		javascripts.bodyScripts = Neos.Fusion:Template {
 			templatePath = 'resource://Sfi.Site/Private/Partials/SharedResources.html'
 			partialRootPath = 'resource://Sfi.Site/Private/Partials'
 			sectionName = 'bodyScripts'

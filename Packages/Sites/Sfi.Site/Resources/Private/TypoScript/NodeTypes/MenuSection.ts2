@@ -1,8 +1,0 @@
-prototype(Sfi.Site:MenuSection) < prototype(TYPO3.TypoScript:Tag) {
-	attributes.class = 'scrollto'
-	attributes.id = ${q(node).property('_name')}
-	content = TYPO3.Neos:ContentCollection
-
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
-	@process.wrap = ${'<div>' + value + '</div>'}
-}
