@@ -1,4 +1,4 @@
-'TYPO3.Neos.NodeTypes:Page':
+'Neos.NodeTypes:Page':
   abstract: TRUE
 
 'Sfi.Site:MenuSection':
@@ -18,7 +18,7 @@
 
 'Sfi.Site:Page':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': TRUE
+    'Neos.NodeTypes:Page': TRUE
   ui:
     label: 'Обычная страница'
 
@@ -195,7 +195,7 @@
     label: 'Фото-цитата'
   childNodes:
     image:
-      type: 'TYPO3.Neos.NodeTypes:Image'
+      type: 'Neos.NodeTypes:Image'
   properties:
     inverse:
       type: boolean
