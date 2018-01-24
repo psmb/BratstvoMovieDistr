@@ -39,13 +39,13 @@ Neos:
             keyPrefix: target/bratstvofilm/
             baseUri: 'https://psmb-neos-resources.hb.bizmrg.com/target/bratstvofilm/'
   Neos:
-    typoScript:
-      autoInclude:
-        Sfi.Site: true
     userInterface:
       navigateComponent:
         nodeTree:
           loadingDepth: 1
+    fusion:
+      autoInclude:
+        Sfi.Site: true
   ContentRepository:
     contentDimensions:
       language:
