@@ -2,7 +2,7 @@ prototype(Sfi.Site:Mosaic) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'Mosaic row collapse'
 	content = TYPO3.Neos:ContentCollectionRenderer
 
-	prototype(TYPO3.Neos.NodeTypes:Image) {
+	prototype(Neos.NodeTypes:Image) {
 		attributes.class = 'Mosaic-item'
 		width = 480
 		height = 480
