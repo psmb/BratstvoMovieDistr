@@ -1,13 +1,5 @@
 
 TYPO3:
-  Neos:
-    typoScript:
-      autoInclude:
-        Sfi.Site: true
-    userInterface:
-      navigateComponent:
-        nodeTree:
-          loadingDepth: 1
   TYPO3CR:
     contentDimensions:
       language:
@@ -65,3 +57,11 @@ Neos:
             bucket: psmb-neos-resources
             keyPrefix: target/bratstvofilm/
             baseUri: 'https://psmb-neos-resources.hb.bizmrg.com/target/bratstvofilm/'
+  Neos:
+    typoScript:
+      autoInclude:
+        Sfi.Site: true
+    userInterface:
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 1

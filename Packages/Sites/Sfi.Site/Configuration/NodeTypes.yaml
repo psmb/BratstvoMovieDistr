@@ -4,8 +4,8 @@
 'Sfi.Site:MenuSection':
   label: "${String.trim(String.stripTags(q(node).property('menuTitle'))) + ' - Секция'}"
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
   ui:
     label: "Секция для меню"
   properties:
@@ -25,8 +25,8 @@
 
 'Sfi.Site:FixedWidthSection':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
   label: "${String.trim(String.stripTags(q(node).property('variant'))) + ' - Секция ограниченной ширины'}"
   ui:
     label: "Секция ограниченной ширины"
@@ -39,7 +39,7 @@
         reloadIfChanged: true
         inspector:
           group: type
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               wide:
@@ -49,8 +49,8 @@
 
 'Sfi.Site:Collapse':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
   ui:
     label: "Схлоповалка"
   properties:
@@ -71,8 +71,8 @@
 
 'Sfi.Site:Carousel':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
   ui:
     label: 'Карусель'
   properties:
@@ -84,7 +84,7 @@
         reloadIfChanged: true
         inspector:
           group: type
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               wide:
@@ -94,23 +94,23 @@
 
 'Sfi.Site:Mosaic':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
   ui:
     label: 'Мозайка'
 
 
 'Sfi.Site:AnnouncementList':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
   ui:
     label: 'Блок анонсов'
 
 'Sfi.Site:Announcement':
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('town') || q(node).property('address') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
   ui:
     label: 'Анонс'
   properties:
@@ -128,7 +128,7 @@
         label: 'Ссылка на анонс'
         inspector:
           group: type
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
     town:
       type: string
       ui:
@@ -149,7 +149,7 @@
 'Sfi.Site:VideoQuote':
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('speaker') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
   ui:
     label: 'Видео-цитата'
   childNodes:
@@ -190,7 +190,7 @@
 'Sfi.Site:ImageQuote':
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('speaker') || q(node).property('quote') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
   ui:
     label: 'Фото-цитата'
   childNodes:
