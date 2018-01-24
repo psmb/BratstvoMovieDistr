@@ -1,28 +1,22 @@
 {
-    "name": "typo3/bratstvomovie-distr",
-    "description" : "bratstvo-movie.ru Neos Distribution",
+    "name": "psmb/bratstvomovie-distr",
+    "description": "bratstvo-movie.ru Neos Distribution",
     "license": "GPL-3.0+",
     "config": {
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin"
     },
     "require": {
-        "neos/neos-development-collection": "2.3.x-dev",
+        "neos/neos-development-collection": "3.3.x-dev",
         "neos/flow-development-collection": "@dev",
-
-        "typo3/party": "@dev",
-        "typo3/imagine": "@dev",
-        "typo3/form": "@dev",
-        "typo3/setup": "@dev",
-
-        "sfi/youtube": "^0.1",
-        "typo3/neos-seo": "^1.0",
-        "flownative/aws-s3": "^1.0"
+        "sfi/youtube": "^2.0",
+        "neos/seo": "~2.0.0",
+        "flownative/aws-s3": "^2.0"
     },
     "scripts": {
-        "post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
-        "post-install-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
-        "post-package-update":"TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
-        "post-package-install":"TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+        "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
     }
 }
