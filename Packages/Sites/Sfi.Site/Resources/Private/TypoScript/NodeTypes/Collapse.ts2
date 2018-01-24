@@ -3,7 +3,7 @@ prototype(Sfi.Site:Collapse) < prototype(Neos.Fusion:Tag) {
 	content = Neos.Fusion:Array {
         10 = Neos.Fusion:Tag {
             attributes.class = 'Collapse-content js-Collapse-content'
-            content = TYPO3.Neos:ContentCollectionRenderer
+            content = Neos.Neos:ContentCollectionRenderer
         }
         20 = Neos.Fusion:Tag {
             tagName = 'a'
@@ -13,7 +13,7 @@ prototype(Sfi.Site:Collapse) < prototype(Neos.Fusion:Tag) {
         }
     }
 
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 	@process.wrap = ${'<div>' + value + '</div>'}
 	@cache {
 		mode = 'cached'

@@ -1,6 +1,6 @@
 prototype(Sfi.Site:Mosaic) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'Mosaic row collapse'
-	content = TYPO3.Neos:ContentCollectionRenderer
+	content = Neos.Neos:ContentCollectionRenderer
 
 	prototype(Neos.NodeTypes:Image) {
 		attributes.class = 'Mosaic-item'
@@ -11,7 +11,7 @@ prototype(Sfi.Site:Mosaic) < prototype(Neos.Fusion:Tag) {
 		allowCropping = true
 	}
 
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 	@process.wrap = ${'<div>' + value + '</div>'}
 	@cache {
 		mode = 'cached'

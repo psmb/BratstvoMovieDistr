@@ -1,8 +1,8 @@
 prototype(Sfi.Site:MenuSection) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'scrollto'
 	attributes.id = ${q(node).property('_name')}
-	content = TYPO3.Neos:ContentCollection
+	content = Neos.Neos:ContentCollection
 
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 	@process.wrap = ${'<div>' + value + '</div>'}
 }

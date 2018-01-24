@@ -1,8 +1,8 @@
 prototype(Sfi.Site:AnnouncementList) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'AnnouncementList row collapse'
-	content = TYPO3.Neos:ContentCollectionRenderer
+	content = Neos.Neos:ContentCollectionRenderer
 
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
     @process.wrap = ${'<div>' + value + '</div>'}
 	@cache {
 		mode = 'cached'
