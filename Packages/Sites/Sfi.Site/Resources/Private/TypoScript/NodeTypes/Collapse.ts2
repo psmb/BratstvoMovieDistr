@@ -1,11 +1,11 @@
-prototype(Sfi.Site:Collapse) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Site:Collapse) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'Collapse js-Collapse'
-	content = TYPO3.TypoScript:Array {
-        10 = TYPO3.TypoScript:Tag {
+	content = Neos.Fusion:Array {
+        10 = Neos.Fusion:Tag {
             attributes.class = 'Collapse-content js-Collapse-content'
             content = TYPO3.Neos:ContentCollectionRenderer
         }
-        20 = TYPO3.TypoScript:Tag {
+        20 = Neos.Fusion:Tag {
             tagName = 'a'
             attributes.href = '#'
             attributes.class = 'Collapse-toggle js-Collapse-toggle'

@@ -1,4 +1,4 @@
-prototype(Sfi.Site:Carousel) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Site:Carousel) < prototype(Neos.Fusion:Tag) {
 	@context.carouselNode = ${node}
 	attributes.class = ${'owl-carousel owl-theme' + (q(node).property('variant') == 'narrow' && 'owl-carousel owl-theme medium-10 medium-offset-1 large-8 large-offset-2 columns') }
 	content = TYPO3.Neos:ContentCollectionRenderer

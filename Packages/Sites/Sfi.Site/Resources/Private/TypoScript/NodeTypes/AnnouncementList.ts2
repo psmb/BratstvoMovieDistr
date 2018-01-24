@@ -1,4 +1,4 @@
-prototype(Sfi.Site:AnnouncementList) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Site:AnnouncementList) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'AnnouncementList row collapse'
 	content = TYPO3.Neos:ContentCollectionRenderer
 

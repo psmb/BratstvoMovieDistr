@@ -1,4 +1,4 @@
-prototype(Sfi.Site:MenuSection) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Site:MenuSection) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'scrollto'
 	attributes.id = ${q(node).property('_name')}
 	content = TYPO3.Neos:ContentCollection

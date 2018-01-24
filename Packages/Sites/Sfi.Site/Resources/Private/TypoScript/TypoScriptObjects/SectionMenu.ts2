@@ -1,11 +1,11 @@
-prototype(Sfi.Site:SectionMenuItem) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Site:SectionMenuItem) < prototype(Neos.Fusion:Tag) {
     tagName = 'a'
     attributes.href = ${'#' + q(node).property('_name')}
     content = ${q(node).property('menuTitle')}
     @process.wrap = ${'<li class="SectionMenu-item small-4 large-2 columns">' + value + '</li>'}
 }
 
-prototype(Sfi.Site:SectionMenu) < prototype(TYPO3.TypoScript:Collection) {
+prototype(Sfi.Site:SectionMenu) < prototype(Neos.Fusion:Collection) {
     collection = ${q(documentNode).find('[instanceof Sfi.Site:MenuSection]')}
     itemName = 'node'
     itemRenderer = Sfi.Site:SectionMenuItem

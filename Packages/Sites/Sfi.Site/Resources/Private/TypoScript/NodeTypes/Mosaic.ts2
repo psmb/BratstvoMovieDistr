@@ -1,4 +1,4 @@
-prototype(Sfi.Site:Mosaic) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Site:Mosaic) < prototype(Neos.Fusion:Tag) {
 	attributes.class = 'Mosaic row collapse'
 	content = TYPO3.Neos:ContentCollectionRenderer
 
