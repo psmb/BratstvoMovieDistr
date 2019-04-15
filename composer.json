@@ -1,16 +1,13 @@
 {
     "name": "psmb/bratstvomovie-distr",
     "description": "bratstvo-movie.ru Neos Distribution",
-    "license": "GPL-3.0+",
     "config": {
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin"
     },
     "require": {
-        "neos/neos-development-collection": "3.3.x-dev",
-        "neos/flow-development-collection": "@dev",
-        "neos/neos-ui": "dev-master",
-        "neos/neos-ui-compiled": "dev-master",
+        "neos/neos-development-collection": "~3.3.0",
+        "neos/neos-ui": "^2",
         "sfi/youtube": "^2.0",
         "neos/seo": "~2.0.0",
         "flownative/aws-s3": "^2.0"
