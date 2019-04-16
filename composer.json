@@ -11,7 +11,7 @@
         "sfi/youtube": "^2.0",
         "neos/seo": "~2.0.0",
         "flownative/aws-s3": "^2.0",
-        "yeebase/graylog": "^3.1"
+        "yeebase/graylog": "^2.4"
     },
     "scripts": {
         "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
