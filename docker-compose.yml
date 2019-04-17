@@ -25,6 +25,7 @@ services:
     deploy:
       update_config:
         order: start-first
+        failure_action: rollback
       labels:
         - "traefik.enable=true"
         - "traefik.port=80"
@@ -46,4 +47,3 @@ networks:
   main:
     external:
       name: main
-
