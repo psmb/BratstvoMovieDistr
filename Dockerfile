@@ -12,4 +12,6 @@ RUN cd /data/www-provisioned && \
     cp /Settings.yaml /data/www-provisioned/Configuration/ && \
     /bin/bash -c "source /init-php-conf.sh"
 COPY --chown=80:80 ./ /data/www-provisioned/
+USER 80
+RUN FLOW_CONTEXT=Production /data/www-provisioned/flow flow:package:rescan && FLOW_CONTEXT=Production /data/www-provisioned/flow flow:cache:warmup
 HEALTHCHECK --interval=30s --timeout=15s --start-period=30s --retries=3 CMD curl -f http://localhost/ | grep "This website is powered by Neos"
