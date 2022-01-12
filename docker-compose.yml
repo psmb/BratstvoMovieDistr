@@ -14,7 +14,7 @@ services:
       - "neos"
     volumes:
       - /data/www-provisioned/Web/_Resources
-    image: dimaip/bratstvomoviedistr:latest
+    image: ghcr.io/psmb/bratstvomoviedistr:master
     hostname: 'bratstvofilm'
     networks:
       - default
