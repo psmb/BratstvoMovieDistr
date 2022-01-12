@@ -14,8 +14,6 @@
 
 /Readme.rst
 /Upgrading.rst
-/composer.lock
-/beard.lock
 
 # Various temporary files
 .fuse_hidden
