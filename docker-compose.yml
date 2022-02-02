@@ -19,7 +19,7 @@ services:
     networks:
       - default
       - main
-    secrets:
+    environment:
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
     deploy:
@@ -38,11 +38,6 @@ services:
       - db
 volumes:
   db-data:
-secrets:
-  AWS_ACCESS_KEY_ID:
-    external: true
-  AWS_SECRET_ACCESS_KEY:
-    external: true
 networks:
   main:
     external:
