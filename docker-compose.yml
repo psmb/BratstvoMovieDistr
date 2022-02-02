@@ -14,6 +14,11 @@ services:
     restart: always
     labels:
       - "neos"
+      - "traefik.enable=true"
+      - "traefik.port=80"
+      - "traefik.default.protocol=http"
+      - "traefik.docker.network=main"
+      - "traefik.frontend.rule=Host:bratstvo-film.ru,www.bratstvo-film.ru,dev.bratstvo-film.ru"
     volumes:
       - /data/www-provisioned/Web/_Resources
     image: ghcr.io/psmb/bratstvomoviedistr:master
@@ -24,16 +29,6 @@ services:
     environment:
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
-    deploy:
-      update_config:
-        order: start-first
-        failure_action: rollback
-      labels:
-        - "traefik.enable=true"
-        - "traefik.port=80"
-        - "traefik.default.protocol=http"
-        - "traefik.docker.network=main"
-        - "traefik.frontend.rule=Host:bratstvo-film.ru,www.bratstvo-film.ru,dev.bratstvo-film.ru"
     ports:
       - '80'
     depends_on:
