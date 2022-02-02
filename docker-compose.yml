@@ -1,6 +1,7 @@
 version: "3.4"
 services:
   db:
+    restart: always
     image: mariadb:10.3
     volumes:
       - db-data:/var/lib/mysql
@@ -10,6 +11,7 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: pass
   web:
+    restart: always
     labels:
       - "neos"
     volumes:
