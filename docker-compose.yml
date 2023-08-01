@@ -18,7 +18,7 @@ services:
       - "traefik.port=80"
       - "traefik.default.protocol=http"
       - "traefik.docker.network=main"
-      - "traefik.frontend.rule=Host:bratstvo-film.ru,www.bratstvo-film.ru,dev.bratstvo-film.ru"
+      - "traefik.frontend.rule=Host:bratstvo-film.ru,www.bratstvo-film.ru"
     volumes:
       - /data/www-provisioned/Web/_Resources
     image: ghcr.io/psmb/bratstvomoviedistr:master
